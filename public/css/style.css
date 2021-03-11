@@ -1,0 +1,144 @@
+.container_2 {  
+    
+    display: grid;
+    width: 95%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    padding: 10px; 
+
+
+
+  }
+
+.grid-item {
+grid-template-columns: auto;
+grid-template-rows: auto;
+
+
+  }
+
+.card-header{
+
+    text-align: center;
+
+
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+/* Page Index */
+
+  /* GRID squelette */
+
+.container_1{
+
+    display: grid;
+    width:100%;
+    border:solid;
+
+grid-template-columns: 1fr ;
+grid-template-rows: auto;
+grid-template-areas:
+    "second"
+    "first"
+    "third";
+
+gap: 10px;
+    margin-top:40px;
+    justify-items: center;
+
+
+
+
+
+
+}
+.first_element_grid{
+    grid-area: first;
+    
+    width: 50%;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+
+    background-color: #013220;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+
+}
+.first_element_grid:hover{
+
+    font-weight: bold;
+    cursor:grab;
+    color: white;
+    text-decoration: none;
+
+
+    
+}
+
+.second_element_grid{
+    grid-area: second;
+    width: 100%;
+
+    text-align: center;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}
+
+
+.third_element_grid{
+    grid-area: third;
+
+
+}
+
+
+.border-button{
+    border: 0.5px solid  !important;
+    color: black;
+    text-decoration: none;
+    height: 95%;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+
+
+
+
+
+}
+.border-button:hover{
+    color: black;
+    text-decoration: none;
+    border: solid  !important;
+    cursor: grab;
+    font-weight: bold;
+
+
+}
+
+
+
+.card-header{
+    background-color: white !important;
+    color: black;
+
+}
+
+.card-body{
+
+    height: 200px !important;
+    padding-top: 2vw !important;
+    padding-bottom: 2vw !important;
+
+}

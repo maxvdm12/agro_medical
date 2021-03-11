@@ -1,25 +1,264 @@
 <html>
 <head> 
 <title> ToDo App </title>
+
+
+<link rel="stylesheet" type="text/css" href="/../css/style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+<script>
+    function openTab(evt, fiche) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+    
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+    
+      // Show the current tab
+      document.getElementById(fiche).style.display = "block";
+
+
+    
+    
+    }
+    function disabled_Info_Gene()
+    {
+        console.log("okiii");
+        var d,s,i;
+        d = document.getElementsByClassName("form_Infos_Gene_Update");
+        s = document.getElementById("save");
+        console.log(d);
+
+        if(d[0].hasAttribute("disabled"))
+        {
+            for (i = 0; i < d.length; i++) {
+                d[i].removeAttribute("disabled");
+            }
+
+            s.style.display= "inline";
+
+
+        }
+        else{
+            for (i = 0; i < d.length; i++) {
+                d[i].setAttribute("disabled","true");
+            }
+
+        s.style.display= "none";
+        }
+
+    }
+    function disabled_Info_Medic()
+    {
+        console.log("okiii");
+        var d;
+        d = document.getElementsByClassName("form_Infos_Medic_Create");
+        console.log(d[0]);
+
+             d[0].style.display ="block";
+         
+
+
+ 
+
+        
+
+    }
+
+    </script>
+
+
 </head>
 
 <body>
-<div class="container">
-<h2> Agro_Medoc </h2>
+    <nav class="navbar navbar-dark bg-dark ">
+    <button><a href="/" ><img src="https://img.flaticon.com/icons/png/512/271/271218.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" width="30" height="30"  alt=""></a></button>
+        <a class="navbar-brand" href="#">
+          <img src="https://p1.hiclipart.com/preview/461/352/974/cartoon-animals-baka-baby-cows-baby-farm-animals-livestock-cattle-cartoon-dairy-cow-png-clipart.jpg" width="30" height="30"  alt="">
+          Agro_Medoc
+        </a>
+      </nav>
+    
+      <nav class="navbar navbar-dark bg-dark ">
+        <a class="navbar-brand" href="#">
+            <img src="https://p1.hiclipart.com/preview/461/352/974/cartoon-animals-baka-baby-cows-baby-farm-animals-livestock-cattle-cartoon-dairy-cow-png-clipart.jpg" width="30" height="30"  alt="">
+            Agro_Medoc
+          </a>
+ 
+          </div>
+        </div>
+      </nav>
 
 
 
-<h2> fiche détaillé </h2>
 
-<button> Fiche info</button>
-<button> Fiche medical</button>
+<h2> fiche détaillé de  <%= result[0].boucle %> </h2>
+<div class="tab">
+<button class="tablinks"   onclick="openTab(event, 'fiche_info')" id="Open_1"> Fiche info</button>
+<button class="tablinks" onclick="openTab(event, 'fiche_medic')"  id="Open_2"> Fiche medical</button>
+</div>
 
-<p> <%= result[0].boucle %></p>
-<p> <%= result[1].medicament_name %></p>
 
+
+<div id="fiche_info" class="tabcontent">
+    <div>
+        <h3> Fiche information</h3>
+        
+
+
+        <table class="table table-dark">
+            <tr>
+                <td>
+                    <a class="btn btn-warning" onclick=disabled_Info_Gene();> Modifier </a> 
+                    <a class="btn btn-danger" href="/form/animal/delete/<% id %>"> Supprimer </a> 
+
+
+                    <form action ="/animal/update" method="POST">
+                    <button  type="submit" style="display:none;" id="save" class="btn btn-primary" > save</button>
+
+
+                </td>
+                <td>
+
+                </td>
+
+            </tr>
+           
+            <tr>
+                <th> Boucle </th>
+                <td> <input class="form_Infos_Gene_Update" type="text"  name="boucle" value="<%= result[0].boucle %>" disabled="true">   </td>
+            </tr>
+            <tr>
+                <th> Sexe </th>
+                <td> <input  class="form_Infos_Gene_Update" type="text" name="gender" value="<%= result[0].gender %>" disabled="true">  </td>
+            </tr>
+            <tr>
+                <th> Type </th>
+                <td>  <input  class="form_Infos_Gene_Update" type="text" name="type" value="<%= result[0].type %>" disabled="true"> </td>
+            </tr>
+            <tr>
+                <th> Date de naissance </th>
+                <td>  <input class="form_Infos_Gene_Update" type="text" name="birth" value="<%= result[0].birth %>" disabled="true"></td>
+            </tr>
+
+            <input type="hidden" name="animalToUpdate" value="<%= id %>" />
+        </form> 
+
+        </table>
+
+        
+            
+
+            <input name="animalToUpdate" value="<%= id %>" />
+            <input id="test" type="text" name="boucle" value=" <%= result[0].boucle %>" disabled="true">
+
+      
+
+
+    </div>
+
+</div>
+
+<div id="fiche_medic" class="tabcontent">
+    <h3>fiche_medicale </h3>
+    <button class="btn btn-success" onclick="disabled_Info_Medic()" > Créer un traitement </button> 
+
+    <table style="display:none;" class="form_Infos_Medic_Create table table-dark" class="table table-dark">
+    <form action ="/treatment/add" method="POST">
+
+        <input type="hidden" name="id_animal" value="<%= id %>" />
+        <tr>
+            <th>Date d'administration du médicament</th>
+            <th>Nom du médicament</th>
+            <th>Numéro du lot</th>
+            <th>Quantité administré</th>
+            <th> creer </th>
+
+        </tr>
+        <tr>
+            <td> <input type="text" name="administration_datum" value="" placeholder=" date d'administration du médicament">  </td>
+            <td> <input type="text" name="medicament_name" value="" placeholder="nom du médicmaent">  </td>
+            <td> <input type="text" name="quantity" value="" placeholder="quantité"> </td>
+            <td> <input type="text" name="num_lot" value="" placeholder="Numéro lot"> </td>
+            <td> <button >creer</button></td>
+
+            
+
+            
+           
+
+        </tr>
+        
+    </form>
+    </table>
+
+
+    <% if (medical) { %>
+        <p>
+
+            <table class="table table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Date d'administration du médicament</th>
+                    <th>Nom du médicament</th>
+                    <th>Numéro du lot</th>
+                    <th>Quantité administré</th>
+                    <th> Actions</th>
+                </tr>
+                <% for( var i = 0; i < result.length; i++){ %>
+                <tr>
+                    <td> <%= i %> </td>
+                    <td>  <%= result[i].administration_datum %> </td>
+                    <td>  <%= result[i].medicament_name %> </td>
+                    <td>  <%= result[i].num_lot %></td>
+                    <td>  <%= result[i].quantity %></td>
+                    <td>
+                        <a class="btn btn-warning" href="/form/animal/update/<%= result[i].id %>"> Modifier </a> 
+                        <a class="btn btn-danger" href="/treatment/delete/<%= result[i].id %>?id_animal=<%= result[i].id_animal %>"> Supprimer </a> 
+    
+
+                    </td>
+                </tr>
+                    <% } %>
+
+            </table>
+            <ul>
+
+
+            </ul>
+        </p>
+
+
+    <% } else { %>
+
+        <p>
+             pas de fiche_medical
+        </p>
+
+
+    <% } %>
 
 
 </div>
+
+<% if(comeFrom == "treatment")  { %>
+<script>
+       document.getElementById("Open_2").click();
+        
+</script>
+<% } else { %>
+
+    <script>
+    document.getElementById("Open_1").click();
+        
+</script>
+
+
+<% } %>
 
 </body>
 </html>

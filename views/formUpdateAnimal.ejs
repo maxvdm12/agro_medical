@@ -1,0 +1,16 @@
+
+    <form action ="/animal/update" method="POST">
+
+        <input type="hidden" name="animalToUpdate" value="<%= id %>" />
+    
+        <input type="text" name="boucle" value="<%= boucle %>" placeholder="entrer les 4 derniers numéro de la boucle">
+        <input type="text" name="sexe" value="<%= gender %>" placeholder=" Sexe : M ou F">
+        <input type="text" name="type" value="<%= type %>" placeholder="BB ou laitière">
+        <input type="text" name="date_naissance" value="<%= birth %>" placeholder="Date_naissance">
+        <button> Sauvegarder les modifications </button>
+    </form>
+    
+    <a href="/" > retour</a>
+
+
+

@@ -1,0 +1,43 @@
+<html>
+<head> 
+<title> Agro_Medoc </title>
+</head>
+
+<body>
+<div class="container">
+<h2> Agro_Medoc </h2>
+
+<h3> Recherche via la boucle d'identification </h3>
+
+<form action ="/search/done" method="POST">
+<input type="text" name="search" value=""  placeholder="Veuillez insérer les 4 chiffres de la boucle"/>
+<button>Rechercher</button>
+</form>
+
+<% if (search == true ) { %>
+    <% if (animaux != '') { %>
+        h2> Les fiches animaux </h2>
+        <table style="border:solid">
+        <tr>
+            <th> Boucle</th>
+            
+        </tr>
+        
+        <% for( var i = 0; i < animaux.length; i++){ %>
+        <tr style="border:solid">
+            <td style="border:solid"><input type="checkbox" id="<%=animaux[i].id %>" name="check" value="<%= animaux[i].boucle %>" /> <%= animaux[i].boucle %> |  
+                <a  href="/animal/delete/<%= animaux[i].id %>"> supprimer </a>
+                <a  href="/animal/details/<%= animaux[i].id %>"> details </a>
+                <a  href="/Animal/update/<%= animaux[i].id %>"> Modifier </a>
+            </td>
+        </tr>
+        <% } %>
+    <% } else { %>
+    <p> Pas d'animaux avec la boucle encodée </p>
+
+    <% } %>
+
+        </table>
+<% } %>
+</body>
+</html>

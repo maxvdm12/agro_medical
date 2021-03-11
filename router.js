@@ -6,26 +6,28 @@ let treatmentController = require("./controllers/treatmentController.js");
 
 
 // Animal 
-router.get("/form/Animal/Add", animalController.formAnimalAdd);
+router.get("/form/animal/add", animalController.formAnimalAdd);
 
-router.post("/Animal/Add", animalController.animalAddFromForm);
+router.post("/animal/add", animalController.animalAddFromForm);
 
-router.get("/Animal/Delete/:idtask", animalController.animalDelete);
-router.get("/Animal/Details/:id", animalController.animalDetails);
+router.get("/animal/delete/:idtask", animalController.animalDelete);
+router.get("/animal/details/:id", animalController.animalDetails);
 
 router.get("/", animalController.allAnimalList);
 
-router.get("/form/Animal/Update/:id", animalController.formAnimalUpdate);
-router.post("/Animal/Update", animalController.animalUpdateFromForm);
+router.get("/form/animal/update/:id", animalController.formAnimalUpdate);
+router.post("/animal/update", animalController.animalUpdateFromForm);
 
 // Treatment
-router.get("/form/Treatment/Add", treatmentController.formTreatmentAdd);
+router.get("/form/treatment/add/:id", treatmentController.formTreatmentAdd);
+router.get("/treatment/delete/:id", treatmentController.treatmentDelete);
 
-router.post("/treatment/Add", treatmentController.treatmentAddFromForm);
+router.post("/treatment/add", treatmentController.treatmentAddFromForm);
 
 //router.get("/TreatmentDelete/:idtask", treatmentController.treatmentDelete);
 
 router.get("/treatments", treatmentController.allTreatmentList);
+
 
 // Search Animal
 router.get("/search", animalController.animalSearch);
