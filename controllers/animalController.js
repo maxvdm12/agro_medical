@@ -1,8 +1,18 @@
 let Animal = require("../models/animalModel");
 let connection = require("../db");
 const { allTreatmentList } = require("./treatmentController");
+const { render } = require("ejs");
 
 let allAnimalList = [];
+
+exports.preHome= function(req, res) {
+    res.render("prehome.ejs");
+};
+
+exports.home= function(req, res) {
+    res.render("home.ejs");
+};
+
 
 exports.allAnimalList = function(req, res) {
     connection.query("select * from animal", function(error, result){
@@ -13,7 +23,7 @@ exports.allAnimalList = function(req, res) {
         }
         else{
  
-        res.render("index.ejs", {animaux: result})
+        res.render("animal.ejs", {animaux: result})
         }
 
 
@@ -25,11 +35,7 @@ exports.allAnimalList = function(req, res) {
 
 };
 
-exports.formAnimalAdd =function(req, res) {
-    res.render("formAddAnimal");
 
-
-};
 
 
 
@@ -192,8 +198,6 @@ exports.animalSearchFromForm = function (req, res){
         else{
             res.render("formSearchAnimal", {"animaux": result, "search": true});
         } 
-
-  
 
 
 });

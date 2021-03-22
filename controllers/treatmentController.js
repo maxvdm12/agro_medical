@@ -21,11 +21,12 @@ exports.treatmentAddFromForm = function(req, res) {
     let id_animal = req.body.id_animal;
     let date =  req.body.administration_datum;
     let medicament_name =  req.body.type;
+    let reason = req.body.reason;
     let quantity =  req.body.quantity;
     let lot = req.body.num_lot;
 
 
-    let treatmentCreated = new Treatment(id_animal, date, medicament_name, quantity, lot);
+    let treatmentCreated = new Treatment(id_animal, date, medicament_name, quantity, lot, reason);
 
     connection.query("INSERT INTO treatment set ?", treatmentCreated, function (error, result){
         if(error)

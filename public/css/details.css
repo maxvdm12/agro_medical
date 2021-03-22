@@ -1,0 +1,68 @@
+.tab {
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    width:100%;
+
+
+
+
+}
+.tab *{
+    display:inline;
+    margin-left: 10%;
+    margin-right: 10%;
+    width:20%;
+    height: 100px;
+
+}
+
+.interactions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #212529;
+    margin-bottom: 10px;
+    height: 150px;
+    color:white;
+
+
+
+
+    
+
+
+
+}
+.interactions button{
+    width:20%;
+    height:50px;
+    margin: 20px;
+}
+.interactions form{
+    display:inline;
+    border: solid;
+}
+
+
+
+.table * input{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color: #212529;
+    color:white;
+   
+}
+.input_On{
+
+
+    background-color:white !important;
+    color:black !important; 
+
+
+}
+

@@ -6,14 +6,15 @@ let treatmentController = require("./controllers/treatmentController.js");
 
 
 // Animal 
-router.get("/form/animal/add", animalController.formAnimalAdd);
 
 router.post("/animal/add", animalController.animalAddFromForm);
 
 router.get("/animal/delete/:idtask", animalController.animalDelete);
 router.get("/animal/details/:id", animalController.animalDetails);
 
-router.get("/", animalController.allAnimalList);
+router.get("/animal", animalController.allAnimalList);
+router.get("/", animalController.preHome);
+router.get("/home", animalController.home);
 
 router.get("/form/animal/update/:id", animalController.formAnimalUpdate);
 router.post("/animal/update", animalController.animalUpdateFromForm);
