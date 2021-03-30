@@ -1,20 +1,274 @@
-.tab {
+/* -- card grid -- */
 
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-    width:100%;
+    .card-body img{
+        width: 30%;
+        height: 60%;
+       
+        border: none;
 
+        
+
+    }
+
+.card-body *{
+    border: solid;
+
+    font-size: var(--text-sm);
+
+    background-color : #212529;
+    color : white; 
+
+}
+
+
+
+.card-body{
+
+    display: grid;
+
+
+    grid-template-columns : 15% 35% 50%;
+    grid-template-rows: 15% 15% 10% 40% 20%;
+
+    grid-template-areas: 
+    "id datum datum"
+    "name name name"
+    "lot lot qt"
+    "reasons reasons reasons"
+    "actions actions actions";
+
+    color: black;
+
+    border: solid;
 
 
 
 }
+
+
+#id_card{
+    grid-area: id ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+#card_datum{
+    grid-area: datum ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+#card_name_medic{
+    grid-area: name ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#card_num_lot{
+    grid-area: lot ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#card_quant{
+    grid-area: qt ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#card_reason{
+    grid-area: reasons;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+#card_reason span {
+    border: none;
+    
+}
+
+#card_reason span:first-child {
+   border-bottom: solid white;
+
+
+    
+}
+
+
+#card_action{
+    grid-area: actions;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+
+}
+#card_action a {
+    display:block;
+    width:50%;
+}
+
+
+/* -- -- */
+
+#form_add_treatment label, form input {
+    display: block;
+}
+
+#form_add_treatment{
+    text-align: center;
+
+    width:100%;
+    height: 40%;
+
+    
+    color : white;
+
+    background : #212529;
+
+
+
+}
+
+#form_add_treatment input {
+    margin: 0 auto;
+    width: 85%;
+    height:10%;
+    text-align: center;
+    border: none;
+
+}
+
+#form_add_treatment button{
+
+    font-size: 0.8em;
+
+    color: white;
+
+    background-color: #556B2F;
+    height: 100px;
+    width:100%;
+
+    margin: 5% 0 5% 0;
+
+}
+/* -- Formulaire flex | Modifier la fiche information -- */ 
+
+
+#fiche_info, #fiche_medic{
+
+    height: 64%;
+
+    font-size: var(--text-xxxl);
+
+
+}
+#fiche_info h2, #fiche_medic h2{
+
+    font-size: var(--text-xl);
+
+}
+
+
+
+
+
+.form_flex{
+    display:flex;
+
+    flex-wrap: wrap;
+
+
+
+    height : 94%;
+    
+    color : white;
+
+    background : #212529;
+
+    border: 3px solid white;
+
+}
+
+
+.form_flex label, .form_flex input {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+
+    width: 50%;
+
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+
+    margin-top:0 !important;
+    text-align: center;
+
+
+  
+}
+
+
+
+
+#save{
+    display: inline-block;
+ 
+    width:100%;
+    margin: 5% 0 5% 0;
+
+}
+#save button{
+
+    font-size: var(--text-xxxl);
+    height: 100%;
+    width:100%;
+}
+
+
+
+
+
+
+/* -- -- */ 
+
+
+
+.tab {
+
+
+
+    height: 10%;
+    width:100%;
+
+
+    font-size: var(--text-lg);
+    font-weight: bold;
+
+    text-align: center;
+
+    margin: 2% 0 2% 0;
+
+}
 .tab *{
     display:inline;
-    margin-left: 10%;
-    margin-right: 10%;
-    width:20%;
-    height: 100px;
+
+    height: 100%;
+    width:48%;
+    border: 5px solid white;
+
+
 
 }
 
@@ -23,46 +277,88 @@
     align-items: center;
     justify-content: center;
 
+    height:20%;
+
     background-color: #212529;
-    margin-bottom: 10px;
-    height: 150px;
     color:white;
-
-
-
 
     
 
 
-
-}
-.interactions button{
-    width:20%;
-    height:50px;
-    margin: 20px;
-}
-.interactions form{
-    display:inline;
-    border: solid;
 }
 
 
 
-.table * input{
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: hidden;
+
+input {
+
+    border-top:none;
     background-color: #212529;
-    color:white;
-   
+    color: white;
+
 }
 .input_On{
 
 
     background-color:white !important;
-    color:black !important; 
+    color:#cf8d00 !important; 
+    border-bottom: 2px solid #cf8d00 !important;
 
 
 }
 
+.nav_buttons:nth-child(3){
+  
+    font-size: 0.8em;
+
+    color: white;
+   
+    background-color: #cf8d00;
+}
+.nav_buttons:nth-child(4){
+
+    font-size: 0.8em;
+
+    color: white;
+
+    background-color: #556B2F;
+
+}
+
+
+
+
+@media screen and (max-width:651px) {
+	table.mobile-optimised {
+		word-break:break-word;
+	}
+	table.mobile-optimised thead {
+		display:none
+	}
+	table.mobile-optimised td {
+		display:block;
+		float:left;/* ie9 and under hack */
+		width:100%;
+		clear:both;
+		background:#f5f5f5;
+		padding:10px 5px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	table.mobile-optimised tbody, table.mobile-optimised tr {
+		display:block
+	}
+	.mobile-optimised td:before {
+		content:attr(data-th);
+		display:block;
+		font-weight:bold;
+		margin:0 0 2px;
+		color:#000;
+	}
+	.mobile-optimised tbody tr {
+		float:left;width:100%;
+    margin-bottom:10px;
+    border: 1px solid;
+	}
+}

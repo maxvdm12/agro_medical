@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+
 :root {
   
 --space-inset-xs : 4px 4px 4px 4px;
@@ -17,4 +19,25 @@
 --space-m : 16px;
 --space-l : 32px;
 --space-xl : 64px;
+
+
+--font-primary: 'Andika';
+
+
+		  /* set base values */
+		  --text-base-size: 1.3em;
+  		  --text-scale-ratio: 1.15;
+
+		/* type scale */
+		--text-xs: calc(var(--text-base-size) / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+		--text-sm: calc(var(--text-base-size)  / var(--text-scale-ratio));
+		--text-md: calc(var(--text-base-size) * var(--text-scale-ratio));
+		--text-lg: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio));
+		--text-xl: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+		--text-xxl: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+		--text-xxxl: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  
+
+
+
 }

@@ -1,39 +1,173 @@
-@media only screen and (max-width: 600px) {
+form label, form input {
+    display: block;
+}
 
-    .container_2 {  
-    
-        display: grid;
-        width: 95%;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-gap: 10px;
-        padding: 10px; 
-    }
-
-    .card *{
-        font-size: 30vmin;
-    }
+form{
+    text-align: center;
 
     
+    color : white;
+
+    background : #212529;
 
 
 }
+form label{
+    margin: 2% 0 0 0;
+}
+form input {
+    margin: 0 auto;
+
+}
+
+form button{
+
+    font-size: 0.8em;
+
+    color: white;
+
+    background-color: #556B2F;
+    height: 100px;
+    width:100%;
+
+    margin: 5% 0 5% 0;
+
+}
+
+
+
+/* Style appliqué uniquement pour animal.ejs */
+
+/* -- NAV -- */
+
+.nav_buttons:nth-child(3){
+
+    font-size: 0.8em;
+
+    color: white;
+
+    background-color: #556B2F;
+
+}
+
+
+
+
+/* -- -- */
+
+/* -- cards -- */
+/* permet d'afficher les numéros des boucles */
+
+.container_cards {  
+    
+
+
+    padding: 10px; 
+}
+
+.card{
+
+    margin: 5% 0 5% 0;
+}
+
+.card *{
+    font-size: var(--text-md);
+}
+
+
+    /* style des "pseudo" bouton */
+.border-button{
+
+    display:flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    height: 95%;
+    width:100%;
+
+    
+    border: 3px solid  !important;
+    border-radius: 3%;
+
+    
+    color: black;
+
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+.border-button:hover{
+
+    cursor: grab;
+
+    border: solid  !important;
+
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+    font-weight: bold;
+
+    color: black;
+
+    text-decoration: none;
+}
+
+
+
+.card-header{
+
+    color: black;
+
+    background-color: white !important;
+
+}
+
+.card-body{
+
+    height: 200px !important;
+
+    padding-top: 2vw !important;
+    padding-bottom: 2vw !important;
+
+}
+
+
+
+
+
+
+/* -- -- */
+
+
+
+
+/* -- -- */
+
+
+
 
 @media only screen and (min-width: 600px) {
 
-    .container_2 {  
+    .container_cards {  
     
         display: grid;
-        width: 100%;
+
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-template-rows: auto;
         grid-gap: 1%;
-        padding: 10px; 
+
         justify-content: center;
+    
+        width: 100%;
 
         margin-top: 50px;
-    
-    
+
+        padding: 10px;    
     
       }
     
@@ -42,104 +176,15 @@
 }
 
 
- 
- /* GRID squelette */
-
-
-
-
-
-
-.third_element_grid{
-    grid-area: third;
-
-
-}
-
-
-.border-button{
-    border: 0.5px solid  !important;
-    color: black;
-    text-decoration: none;
-    height: 95%;
-    text-align: center;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-
-
-}
-
-
-
-.border-button:hover{
-    color: black;
-    text-decoration: none;
-    border: solid  !important;
-    cursor: grab;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-
-}
-
-
-
-
-
-
-
-
-
-
-.card-header{
-    background-color: white !important;
-    color: black;
-
-}
-
-.card-body{
-
-    height: 200px !important;
-    padding-top: 2vw !important;
-    padding-bottom: 2vw !important;
-
-}
-
-
-
-.grid-item {
-grid-template-columns: auto;
-grid-template-rows: auto;
-
-
-  }
-
-.card-header{
-
-    text-align: center;
-
-
-}
 
 .tabcontent {
     display: none;
-    padding: 6px 12px;
+    
     border: 1px solid #ccc;
     border-top: none;
+
+    padding: 6px 12px;
   }
 
-.card {
-    font-size: 10vmin;
-}
 
 
-.table * input{
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: hidden;
-    background-color: #212529;
-    color:white;

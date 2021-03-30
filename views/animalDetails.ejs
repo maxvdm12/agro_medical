@@ -5,6 +5,8 @@
 
 <link rel="stylesheet" type="text/css" href="/../css/style.css" />
 <link rel="stylesheet" type="text/css" href="/../css/details.css" />
+<link rel="stylesheet" type="text/css" href="/../css/css_variable.css" />
+
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
@@ -86,20 +88,22 @@
 
     }
 
+
     </script>
 
 
 </head>
 
 <body>
-    <nav class=" bg-dark text-light">
+    <nav>
 
-        <a class="nav_buttons" href="/animal"> <div class="arrow"></div></a>
+        <a class="nav_buttons" href="/animal"> <img src="/img/back.svg" alt="Retour"> </a>
     
         <h1> Fiche : <%= result[0].boucle %> </h1>
     
-        <button id="btn_modify" class="nav_buttons" onclick=Active_Form_Modify_Info();> Modifier </button> 
-        <button id="btn_create" style="display:none" class=" nav_buttons" onclick="active_Form_Add_Treatment()" > Créer un traitement </button> 
+        <button id="btn_modify" class="nav_buttons" onclick=Active_Form_Modify_Info();> <img src="/img/edit.svg" alt="Modifier la fiche"> </a> 
+        </button> 
+        <button id="btn_create" style="display:none" class=" nav_buttons" onclick="active_Form_Add_Treatment()" > <img src="/img/treatment.svg" alt="Ajouter un traitement">  </button> 
 
 
     
@@ -115,61 +119,35 @@
 
 
 <div id="fiche_info" class="tabcontent">
-    <div>
+    <div class="interactions">   
+        <h2> Fiche information</h2>   
+    </div>
 
-        <div class="interactions">   
-            <h2> Fiche information</h2>
-            
+    <form class="form_flex" action ="/animal/update" method="POST">
 
+        <input type="hidden" name="animalToUpdate" value="<%= id %>" > <!-- Pour savoir quel animal modifié-->
+
+        <label for="boucle"> Boucle </label>
+        <input id="boucle" class="form_Infos_Gene_Update" type="text"  name="boucle" value="<%= result[0].boucle %>" disabled="true">
+
+        <label for="sexe"> Sexe </label>
+        <input  id="sexe" class="form_Infos_Gene_Update" type="text" name="gender" value="<%= result[0].gender %>" disabled="true">
+
+        <label for="type"> Type </label>
+        <input  id="type" class="form_Infos_Gene_Update" type="text" name="type" value="<%= result[0].type %>" disabled="true">
+
+        <label for="date_naissance"> Date de naissance </label>
+        <input id="date_naissance" class="form_Infos_Gene_Update" type="text" name="birth" value="<%= result[0].birth %>" disabled="true">
+
+
+        <div id="save" style="display:none;">
+            <button class="btn btn-primary" > save</button> 
         </div>
-
-
-        <form action ="/animal/update" method="POST">
-
-
-            <table class="table table-dark">
-                <tr>
-                    <td>
-
-                    </td>
-                    <td>
-
-                    </td>
-
-                </tr>
-            
-                <tr>
-                    <th> Boucle </th>
-                    <td> <input class="form_Infos_Gene_Update" type="text"  name="boucle" value="<%= result[0].boucle %>" disabled="true">   </td>
-                </tr>
-                <tr>
-                    <th> Sexe </th>
-                    <td> <input  class="form_Infos_Gene_Update" type="text" name="gender" value="<%= result[0].gender %>" disabled="true">  </td>
-                </tr>
-                <tr>
-                    <th> Type </th>
-                    <td>  <input  class="form_Infos_Gene_Update" type="text" name="type" value="<%= result[0].type %>" disabled="true"> </td>
-                </tr>
-                <tr>
-                    <th> Date de naissance </th>
-                    <td>  <input class="form_Infos_Gene_Update" type="text" name="birth" value="<%= result[0].birth %>" disabled="true"></td>
-                </tr>
-
-                <input type="hidden" name="animalToUpdate" value="<%= id %>" />
-
-
-            </table>
-            <div id="save" style="display:none;" class="interactions">
-                <button class="btn btn-primary" > save</button>
-                <button class="btn btn-danger" href="/form/animal/delete/<% id %>"> Supprimer </button> 
-            </div>
+    
     </form> 
 
         
-      
-
-
-    </div>
+ 
 
 </div>
 
@@ -179,75 +157,52 @@
     <div class="interactions">
         <h2>Fiche médicale </h2>
     </div>
-    <table style="display:none;" class="form_Infos_Medic_Create table table-dark" class="table table-dark">
-    <form action ="/treatment/add" method="POST">
+   
+    <form id="form_add_treatment" style="display:none;" class="form_Infos_Medic_Create" action ="/treatment/add" method="POST">
 
         <input type="hidden" name="id_animal" value="<%= id %>" />
-        <tr>
-            <th>Date d'administration du médicament</th>
-            <th>Numéro du lot</th>
-            <th>Nom du médicament</th>
-            <th>raison</th>
-            <th>Quantité administré</th>
-            <th> creer </th>
 
-        </tr>
-        <tr>
-            <td> <input class="input_On" type="text" name="administration_datum" value="" placeholder=" date d'administration du médicament">  </td>
-            <td> <input class="input_On" type="text" name="num_lot" value="" placeholder="Numéro lot"> </td>
-            <td> <input class="input_On" type="text" name="medicament_name" value="" placeholder="nom du médicament">  </td>
-            <td> <input class="input_On" type="text" name="reason" value="" placeholder="raison d'administration">  </td>
-            <td> <input class="input_On" type="text" name="quantity" value="" placeholder="quantité"> </td>
+                <label for="date_administration"> Date d'administration :</label>
+                <input id="date_administration" type="text" name="administration_datum" value="" placeholder=" date d'administration du médicament">
+        
+                <label for="numero_lot"> Numéro du lot : </label>
+                <input id="numero_lot" type="text" name="num_lot" value="" placeholder="Numéro lot">
+        
+                <label for="nom_medicament"> Nom du médicament: </label>
+                <input id="nom_medicament" type="text" name="medicament_name" value="" placeholder="nom du médicament">
+        
+                <label for="raison"> Symptomes | Maladies :  </label>
+                <input id="raison" type="text" name="reason" value="" placeholder="raison d'administration"> 
 
-            <td> <button >creer</button></td>
+                <label for="quantité"> quantité (en CC) :  </label>
+                <input id="quantité" type="text" name="quantity" value="" placeholder="quantité"> </td>
 
-            
-
-            
-           
-
-        </tr>
+                <button>Ajouter</button>
+                    
         
     </form>
-    </table>
-
 
     <% if (medical) { %>
-        <p>
-
-            <table class="table table-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Date d'administration du médicament</th>
-                    <th>Numéro du lot</th>
-                    <th>Nom du médicament</th>
-                    <th>Raison d'administration</th>
-                    <th>Quantité administré</th>
-                    <th> Actions</th>
-                </tr>
                 <% for( var i = 0; i < result.length; i++){ %>
-                <tr>
-                    <td> <%= i %> </td>
-                    <td>  <%= result[i].administration_datum %> </td>
-                    <td>  <%= result[i].num_lot %></td>
-                    <td>  <%= result[i].medicament_name %> </td>
-                    <td>  <%= result[i].reason %> </td>
-                    <td>  <%= result[i].quantity %></td>
-                    <td>
-                        <a class="btn btn-warning" href="/form/animal/update/<%= result[i].id %>"> Modifier </a> 
-                        <a class="btn btn-danger" href="/treatment/delete/<%= result[i].id %>?id_animal=<%= result[i].id_animal %>"> Supprimer </a> 
-    
+  
 
-                    </td>
-                </tr>
+                <div class="card grid-item text-light">
+                    <div class="card-body">
+                        <div id="id_card"> <%= i %> </div>
+                        <div id="card_datum"> <img src="/img/injection_white-svg.svg" alt="piqure d'injection"> <%= result[i].administration_datum %>  </div>
+                        <div id="card_name_medic"> <img src="/img/medicament-svg.svg" alt="photo d'un medicament cartoon"><%= result[i].medicament_name %> </div>
+                        <div id="card_num_lot">  <img src="/img/tickets-svg.svg" alt="etiquette d'article"><%= result[i].num_lot %> </div>
+                        <div id="card_quant">  <img src="/img/measuring-svg.svg" alt="balance"> <%= result[i].quantity %> CC</div>   
+                        <div id="card_reason"> <span>Symptômes | Maladies : </span> <span><%= result[i].reason %> </span></div>
+                        <div id="card_action">
+                            <a class="btn_edit" href="/form/treatment/update/<%= result[i].id %> %>"> Modifier </a> 
+                            <a  class= "btn_supp" href="/treatment/delete/<%= result[i].id %>?id_animal=<%= result[i].id_animal %>"> Supprimer </a> 
+                        </div>
+
+                    </div>
+                  </div>
                     <% } %>
-
-            </table>
-            <ul>
-
-
-            </ul>
-        </p>
+            
 
 
     <% } else { %>

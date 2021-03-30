@@ -1,50 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
 
-body{
-    width:100%;
+/* Style pour tous les viewports */
 
-}
-
-*{
-    font-family:'Andika', sans-serif;
-}
-
-
-h1
-{
-    text-transform: uppercase;
-    font-size : 500px;
-    letter-spacing: 2px;
-    word-spacing: 10px;
-
-    
-}
-
-/* NAV BAR */
+/* -- NAV -- */
 nav{
     display: flex;
+
     align-content: center;
     align-items: center;
+
     justify-content: space-between;
-    border: solid white;
-    height:10%;
+
+    height:15%;
+
+    background-color: #212529;
+    color: white;
+
+    border-bottom : 5px solid red;
+
+
+
 
 } 
 
 .nav_buttons {
     display: flex;
-    color:white;
 
-    width:15%;
-    margin-right: 2%;
-    margin-left: 2%;
-    height:70%;
-
-    text-decoration: none;
     align-items: center;
+
     justify-content: center;
 
+    height:70%;
+    width:20%;
 
+    margin: 0 2% 0 2%;
+
+    padding: 0 2% 0 2%;
+
+    font-size: 0.8em;
+
+    border: 1px solid;
+
+
+    color:white;
+
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.nav_buttons img {
+    width:100%;
+    height:95%;
 }
 .nav_buttons:hover{
 
@@ -54,42 +61,64 @@ nav{
     text-decoration: none;
     border:solid white;
 }
-.nav_buttons:nth-child(3){
-    background-color: #cf8d00;
+
+
+.nav_buttons:nth-child(1){
+  
+    font-size: 0.8em;
+
     color: white;
+   
+    background-color: #F5F5DC;
+}
 
-    font-size: 1.2vmax;
+/* -- -- */
+
+
+/* -- body -- */
+
+
+
+
+
+body,html{
+
+    height:100%;
+    width:100%;
+    margin:0 auto;
+
+    font-size: var(--text-base-size);
+    font-family: var(--font-primary);
+    /*color: var(--color-text);*/
+
+
+
+ 
 
 
 
 }
 
-.nav_buttons:nth-child(4){
-    background-color:#556B2F;
 
+/* -- -- */
 
-
+*{
+    font-family:'Andika', sans-serif;
 }
 
-@import "lesshat";
 
-.arrow {
-    border: solid black;
-    border-width: 0 10px 10px 0;
-    display: inline-block;
-    padding: 10px;
+h1
+{
+    text-transform: uppercase;
+    font-size : var(--text-sm);
+    letter-spacing: 2px;
+    word-spacing: 10px;
+
+    
+}
 
 
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-
-  }
-
-  h2{
-      text-align: center;
-      color: white;
-
-  }
+/* NAV BAR */
 
   /*  LES TABLEAUX */
 
@@ -102,3 +131,17 @@ table * {
     text-align: center;
 
 }
+
+
+
+/* Style bouton gobale */
+
+.btn_edit{
+    background-color: #cf8d00 !important;
+
+}
+.btn_supp{
+    background-color:  #7a0012 !important;
+
+}
+

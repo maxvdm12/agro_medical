@@ -23,6 +23,9 @@ router.post("/animal/update", animalController.animalUpdateFromForm);
 router.get("/form/treatment/add/:id", treatmentController.formTreatmentAdd);
 router.get("/treatment/delete/:id", treatmentController.treatmentDelete);
 
+router.get("/form/treatment/update/:id", treatmentController.formTreatmentUpdate);
+router.post("/treatment/update", treatmentController.treatmentUpdateFromForm);
+
 router.post("/treatment/add", treatmentController.treatmentAddFromForm);
 
 //router.get("/TreatmentDelete/:idtask", treatmentController.treatmentDelete);
