@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+
+/* Style pour tous les viewports */
+
+/* -- NAV -- */
+nav{
+    display: flex;
+
+    align-content: center;
+    align-items: center;
+
+    justify-content: space-between;
+
+    height:20vw;
+
+    background-color: #212529;
+    color: white;
+
+
+
+
+} 
+
+.nav_buttons {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height:60%;
+    width:20%;
+
+    margin: 0 2% 0 2%;
+
+
+
+    font-size: 0.8em;
+
+
+
+
+    color:white;
+
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.nav_buttons img {
+    width:100%;
+    height:85%;
+}
+.nav_buttons:hover{
+
+    font-weight: bold;
+    cursor:grab;
+    color: white;
+    text-decoration: none;
+    border:solid white;
+
+}
+
+
+.nav_buttons:nth-child(1){
+  
+    font-size: 0.8em;
+
+    color: white;
+   
+    background-color: #F5F5DC;
+}
+
+/* -- -- */
+
+
+/* -- body -- */
+
+
+
+
+body{
+
+    height:100%;
+    width:100%;
+    margin:0 auto;
+
+
+
+
+
+    font-size: var(--text-base-size);
+    font-family: var(--font-primary);
+    /*color: var(--color-text);*/
+
+
+
+ 
+
+
+
+}
+
+
+/* -- -- */
+
+*{
+    font-family:'Andika', sans-serif;
+}
+
+
+
+h1
+{
+    text-transform: uppercase;
+    font-size : var(--text-xl);
+    letter-spacing: 2px;
+    word-spacing: 10px;
+
+    
+}
+
+
+/* NAV BAR */
+
+  /*  LES TABLEAUX */
+
+ table{
+    text-align: center;
+
+}
+
+table * {
+    text-align: center;
+
+}
+
+
+
+/* Style bouton gobale */
+
+.btn_edit{
+    background-color: #cf8d00 !important;
+    text-decoration: none;
+
+}
+.btn_supp{
+    background-color:  #7a0012 !important;
+
+}
+.btn_create{
+
+    background-color:  #556B2F !important;
+}
+
+button{
+    border: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+/* Add forms (animal or treatment) */
+.form_add label, .form_add input {
+    display: block;
+    color: white;
+}
+
+.form_add{
+   
+    background : #212529;
+
+
+}
+.form_add label{
+    margin: 2% 0 0 0;
+    padding: 0 0 0 5%;
+
+    font-size:var(--text-xl);
+}
+.form_add input {
+    margin: 0 auto;
+
+    background-color: white;
+
+    height: 15vw;
+    width: 90%;
+
+    font-size:var(--text-xl);
+
+    font-weight: bold;
+
+    color: black;
+
+}
+
+.form_add button{
+
+    border:none;
+
+    font-size: var(--text-xl);
+
+    color: white;
+
+    background-color: #556B2F;
+    height: 100px;
+    width:100%;
+
+    margin: 5% 0 5% 0;
+
+}
+
+@media only screen and (min-width: 600px) {
+
+nav{
+    height: 10vw;
+}
+
+h2 {
+    font-size: var(--text-xs);
+}
+h1{
+    font-size: var(--text-md);
+
+}
+
+.form_add input {
+    height: 6vw;
+    font-size: var(--text-md);
+}
+.form_add label {
+    font-size: var(--text-md);
+}
+
+
+}
+
+@media only screen and (min-width: 992px) {
+    nav{
+        height: 5vw;
+    }
+
+    .nav_buttons {
+        width: 20%;
+        height: 80%;
+
+    }
+
+.form_add label, .form_add input {
+        color: white;
+
+        height: 5%;
+
+        font-size:var(--text-xs);
+}
+    
+
+.form_add input {
+    margin: 0 auto;
+
+    background-color: white;
+
+    padding: 0 0 0 0;
+    font-weight: bold;
+
+    color: black;
+
+}
+
+.form_add button{
+
+    border:none;
+
+    font-size: var(--text-xl);
+
+    color: white;
+
+    background-color: #556B2F;
+    height: 100px;
+    width:100%;
+
+    margin: 1% 0 3% 0;
+
+}
+}

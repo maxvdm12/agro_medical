@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+
+:root {
+  
+--space-inset-xs : 4px 4px 4px 4px;
+--space-inset-s : 8px 8px 8px 8px;
+--space-inset-m : 16px 16px 16px 16px;
+--space-inset-l : 32px 32px 32px 32px;
+--space-inset-xl : 64px 64px 64px 64px;
+--space-stack-default : 0 0 16px 0;
+--space-stack-xs : 0 0 4px 0;
+--space-stack-s : 0 0 8px 0;
+--space-stack-m : 0 0 16px 0;
+--space-stack-l : 0 0 32px 0;
+--space-stack-xl : 0 0 64px 0;
+--space-default : 16px;
+--space-xs : 4px;
+--space-s : 8px;
+--space-m : 16px;
+--space-l : 32px;
+--space-xl : 64px;
+
+
+--font-primary: 'Andika';
+
+
+		  /* set base values */
+		  --text-base-size: 3vw;
+  		  --text-scale-ratio: 1.25;
+
+		/* type scale */
+		--text-xxxs: calc( var(--text-base-size) / (var(--text-scale-ratio) * var(--text-scale-ratio)* var(--text-scale-ratio)*var(--text-scale-ratio)));
+		--text-xxs: calc( var(--text-base-size) / (var(--text-scale-ratio) * var(--text-scale-ratio)* var(--text-scale-ratio)));
+		--text-xs: calc(var(--text-base-size) / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+		--text-sm: calc(var(--text-base-size)  / var(--text-scale-ratio));
+		--text-md: calc(var(--text-base-size) * var(--text-scale-ratio));
+		--text-lg: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio));
+		--text-xl: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+		--text-xxl: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+		--text-xxxl: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  
+
+
+
+}

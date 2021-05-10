@@ -1,0 +1,151 @@
+/* nav */
+
+
+nav h1 span{
+    display: inline;
+
+}
+
+
+/* Boutons fiches infos et medics */
+
+.tab {
+    height: 20vw;
+    width:100%;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    margin: 1% 0 1% 0;
+
+}
+.tab *{
+    display:inline;
+    cursor: grab ;
+
+    height: 100%;
+    width:48%;
+
+    border: 5px solid white;
+
+    font-size: var(--text-lg);
+
+
+
+}
+
+/* Sous titre Fiche XXXXXXXXXX */
+
+.interactions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height:10vw;
+
+    background-color: #212529;
+    color:white;
+
+    margin-bottom: 1%;
+
+
+}
+
+
+
+
+/* -- -- */
+
+/* -- Formulaire flex | Modifier la fiche information -- */ 
+
+
+
+
+
+
+
+/* -- -- */ 
+
+
+
+
+
+input {
+
+    border-top:none;
+    background-color: #212529;
+    color: white;
+
+    font-size: var(--text-xxl);
+
+}
+.input_On{
+
+
+    background-color:white !important;
+    color:#cf8d00 !important; 
+    border-bottom: 2px solid #cf8d00 !important;
+
+
+}
+
+.nav_buttons:nth-child(3){
+  
+    font-size: 0.8em;
+
+    color: white;
+   
+    background-color: #cf8d00;
+}
+
+
+
+
+@media only screen and (min-width: 600px) {
+    nav h1 span{
+        display: inline;
+    }
+
+    
+.tab {
+
+    height: 10vw;
+    width:100%;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    margin: 2% 0 2% 0;
+
+}
+.tab *{
+    display:inline;
+    cursor: grab ;
+
+    height: 100%;
+    width:48%;
+
+    border: 5px solid white;
+
+    font-size: var(--text-xl);
+
+}
+
+.interactions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height:5vw;
+
+    background-color: #212529;
+    color:white;
+
+    margin-bottom: 1%;
+
+}
+
+
+}

@@ -1,6 +1,10 @@
 var express = require("express");
+var bodyParser = require("body-parser");
 let routes = require('./router');
+let apiRoutes = require('./apiRoute')
 let app = express();
+
+
 
 
 app.use(express.static(__dirname + '/public'));
@@ -12,6 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', routes);
 //app.use('/removetask/:idtask', routes);
 //app.use('/addtask', routes);
+
+app.use(bodyParser.json());
+app.use('/api', apiRoutes);
 
 //Mysql Connect
 

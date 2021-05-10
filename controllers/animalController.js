@@ -23,7 +23,9 @@ exports.allAnimalList = function(req, res) {
         }
         else{
  
-        res.render("animal.ejs", {animaux: result})
+       res.render("animal.ejs", {animaux: result})
+
+
         }
 
 
