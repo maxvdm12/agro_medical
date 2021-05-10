@@ -3,13 +3,6 @@ let connection = require("../db");
 //const { render } = require("ejs");
 
 
-exports.preHome= function(req, res) {
-    //res.render("prehome.ejs");
-};
-
-exports.home= function(req, res) {
-    //res.render("home.ejs");
-};
 
 exports.addAnimal = function(req, res) {
 
