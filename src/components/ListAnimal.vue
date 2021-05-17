@@ -7,7 +7,7 @@
 
 <div id="search_container">
         <label for="search">Recherche boucle </label>
-        <input id="search" type="tel" name="search" v-model="search" placeholder=" 1234">
+        <input tabindex="1" id="search" type="tel" name="search" v-model="search" placeholder=" 1234">
 </div>
 
   <div class="container_cards" >  
