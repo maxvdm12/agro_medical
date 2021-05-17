@@ -1,3 +1,7 @@
+*{
+
+    background-color: red;
+}
 form label, form input {
     display: block;
 }

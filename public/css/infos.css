@@ -1,3 +1,5 @@
+
+
 .form_flex{
     display:flex;
 
@@ -14,7 +16,7 @@
 }
 
 
-.form_flex label, .form_flex input, .form_flex select {
+.form_flex label, .form_flex input {
 
     display: flex;
 
@@ -23,18 +25,21 @@
 
     height: 25vw;
     width: 50%;
-    
-    margin-top: 0 !important;
-
-    padding: 0;
-
     border-bottom: 2px solid white;
     border-top: 2px solid white;
 
+
+
+    margin-top: 0 !important;
     text-align: center;
+
+    padding: 0;
+
+
+  
 }
 
-.form_flex input, .form_flex select{
+.form_flex input{
 
 border-left: none;
 border-right: none;
@@ -45,13 +50,9 @@ font-size: var(--text-md) ;
 
 .form_flex label{
     font-style: italic;
-
-    font-size: var(--text-lg);
-
-    
 }
 
-.input_edit input, .input_edit select {
+.input_edit input {
 
     font-weight: bold;
 
@@ -66,42 +67,20 @@ font-size: var(--text-md) ;
 
 #save{
     display : flex;
-
     align-items : center;
     justify-content: center;
 
  
     width:100%;
     height: 15vw;
-
     margin: 0 0 0 0;
 
 
     background-color: #556B2F;
 
     color: white;
-
     font-size: var(--text-xxl);
 }
-
-
-select, option{
-    color: white;
-    background-color: #212529;
-    border:none;
-    border-radius: 0;
-    font: inherit;
-
-    text-align-last: center;
-    text-align: center;
-    -ms-text-align-last: center;
-    -moz-text-align-last: center;
-
-}
-
-
-
-
 
 
 @media only screen and (min-width: 600px) {
@@ -113,21 +92,15 @@ select, option{
 }
 
 .form_flex label {
-    font-size: var(--text-md)
+    font-size: var(--text-xs);
 }
 
 #save{
     height: 10vw;
 }
 
-.interactions{
-
-    height: 12vw;
-}
 
 }
-
-
 
 @media only screen and (min-width: 992px) {
 
@@ -135,17 +108,16 @@ select, option{
 .form_flex label, .form_flex input {
 
     height: 4vw;
+}
 
-    font-size: var(--text-xs);
-
+.form_flex label {
+    font-size: var(--text-xxxs)
 }
 
 #save{
     height: 5vw;
-
-    font-size: var(--text-xs);
-
 }
+
 
 }
 

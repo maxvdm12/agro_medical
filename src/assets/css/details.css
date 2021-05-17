@@ -12,12 +12,13 @@ nav h1 span{
 .tab {
     height: 20vw;
     width:100%;
+    
+    
+    margin: 1% 0 1% 0;
 
     font-weight: bold;
 
     text-align: center;
-
-    margin: 1% 0 1% 0;
 
 }
 .tab *{
@@ -39,15 +40,18 @@ nav h1 span{
 
 .interactions {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
+    margin-bottom: 1%;
+
     height:10vw;
 
-    background-color: #212529;
     color:white;
 
-    margin-bottom: 1%;
+    background-color: #212529;
+
 
 
 }
@@ -60,13 +64,7 @@ nav h1 span{
 /* -- Formulaire flex | Modifier la fiche information -- */ 
 
 
-
-
-
-
-
 /* -- -- */ 
-
 
 
 
@@ -74,8 +72,11 @@ nav h1 span{
 input {
 
     border-top:none;
-    background-color: #212529;
+
     color: white;
+    
+    background-color: #212529;
+
 
     font-size: var(--text-xxl);
 
@@ -83,8 +84,10 @@ input {
 .input_On{
 
 
-    background-color:white !important;
     color:#cf8d00 !important; 
+
+    background-color:white !important;
+
     border-bottom: 2px solid #cf8d00 !important;
 
 
@@ -113,15 +116,18 @@ input {
     height: 10vw;
     width:100%;
 
+    margin: 2% 0 2% 0;
+
     font-weight: bold;
 
     text-align: center;
 
-    margin: 2% 0 2% 0;
+ 
 
 }
 .tab *{
     display:inline;
+
     cursor: grab ;
 
     height: 100%;
@@ -135,15 +141,19 @@ input {
 
 .interactions {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     height:5vw;
 
-    background-color: #212529;
+    
+    margin-bottom: 1%;
+
     color:white;
 
-    margin-bottom: 1%;
+    background-color: #212529;
 
 }
 

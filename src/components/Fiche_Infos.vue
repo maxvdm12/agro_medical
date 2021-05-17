@@ -17,13 +17,19 @@
         <label for="sexe"> Sexe </label>
         <input  id="sexe" type="text" name="gender" v-model="animal.gender" :disabled="disabled == 1">
 
-        <label for="type"> Type </label>
-        <input  id="type" type="text" name="type" v-model="animal.type" :disabled="disabled == 1">
+
+        <label for="type"> BB | latière | Mixte </label>
+        <select name="type-select" id="type" :disabled="disabled == 1" v-model="animal.type">
+            <option  value="4">--Non mentionne--</option>
+            <option  value="1">BB</option>
+            <option  value="2">Laitiere</option>
+            <option  value="3">Mixte</option>
+        </select>
 
         <label id="label_date_naissance" for="date_naissance"> Date de naissance </label>
         <input id="date_naissance" type="text" name="birth" v-model="animal.birth" :disabled="disabled == 1">
 
-        <button v-if="disabled == 0" id="save"> save </button> 
+        <button aria-label="sauvegarder mes changements" v-if="disabled == 0" id="save"> sauvegarder </button> 
 
     
     </form> 
@@ -52,7 +58,8 @@
                     boucle : "",
                     gender : "",
                     type :  "",
-                    birth : ""
+                    birth : "",
+                    name_type:"",
                 }
             }
         }, 

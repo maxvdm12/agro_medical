@@ -7,9 +7,9 @@
     
         <h1> <span> Fiche</span> <span> {{boucle}}</span>  </h1>
     
-        <button  class="nav_buttons" v-if="fiche === 'info'" @click="disabled = (disabled + 1)%2" > <img src="../assets/img/edit.svg" alt="Modifier la fiche"> </button> 
+        <button tabindex="1" class="nav_buttons" v-if="fiche === 'info'" @click="disabled = (disabled + 1)%2" > <img src="../assets/img/edit.svg" alt="Modifier la fiche"> </button> 
 
-        <button v-if="fiche === 'medical'" @click="btnAddTreatment = !btnAddTreatment" class="nav_buttons btn_create" > <img src="../assets/img/treatment.svg" alt="Ajouter un traitement">  </button> 
+        <button tabindex="1" v-if="fiche === 'medical'" @click="btnAddTreatment = !btnAddTreatment" class="nav_buttons btn_create" > <img src="../assets/img/treatment.svg" alt="Ajouter un traitement">  </button> 
 
       </nav>
 

@@ -327,38 +327,11 @@ input {
 
 
 
+@media only screen and (min-width: 600px) {
 
-@media screen and (max-width:651px) {
-	table.mobile-optimised {
-		word-break:break-word;
-	}
-	table.mobile-optimised thead {
-		display:none
-	}
-	table.mobile-optimised td {
-		display:block;
-		float:left;/* ie9 and under hack */
-		width:100%;
-		clear:both;
-		background:#f5f5f5;
-		padding:10px 5px;
-		-moz-box-sizing:border-box;
-		-webkit-box-sizing:border-box;
-		box-sizing:border-box;
-	}
-	table.mobile-optimised tbody, table.mobile-optimised tr {
-		display:block
-	}
-	.mobile-optimised td:before {
-		content:attr(data-th);
-		display:block;
-		font-weight:bold;
-		margin:0 0 2px;
-		color:#000;
-	}
-	.mobile-optimised tbody tr {
-		float:left;width:100%;
-    margin-bottom:10px;
-    border: 1px solid;
-	}
+    *{
+
+        font-size: var(--text-xxl) ;
+    }
+
 }

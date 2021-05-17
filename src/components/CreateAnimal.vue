@@ -9,13 +9,21 @@
         <label for="sexe">Sexe  </label>
         <input id="sexe" type="text" name="sexe" v-model="animal.gender" placeholder=" Sexe : M ou F">
 
-        <label for="type"> BB | latière | Mixte </label>
-        <input id="type" type="text" name="type" v-model="animal.type" placeholder="BB ou laitière">
+        <label for="type"> BB | laitière | Mixte </label>
+        <select name="type-select" id="type" v-model="animal.type">
+            <option value="4">--Selectionner un choix--</option>
+            <option value="1">Laitière</option>
+            <option value="2">BB</option>
+            <option value="3">Mixte</option>
+        </select>
+
+
 
         <label for="birth"> Date de naissance  </label>
         <input id="birth" type="text" name="date_naissance" v-model="animal.birth" placeholder="Date_naissance">
 
-        <button >Créer la fiche</button>
+        <button aria-label="Créer une nouvelle fiche animal" >Créer la fiche</button>
+
 
       </form>
 </template>
@@ -33,9 +41,20 @@ import axios from "axios";
                     gender : "",
                     type :  "",
                     birth : ""
-                }
+                },
+
+                type_animal : []
             }
         },
+        created() {
+            let apiURL = 'http://192.168.1.9:4000/type';
+            axios.get(apiURL).then(res => {
+                this.type_animal = res.data.type;
+            }).catch(error => {
+                console.log(error)
+            });
+        },
+                   
         methods: {
             handleSubmitForm() {
 

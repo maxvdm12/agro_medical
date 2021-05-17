@@ -14,6 +14,7 @@ router.post("/add/animal", animalController.addAnimal);
 router.get("/animal/details/:id", animalController.animalDetails);
 router.post("/animal/update", animalController.animalUpdateFromForm);
 router.get("/animal/search/:id_animal", animalController.animalSearch);
+router.get("/type", animalController.animalType);
 
 
 router.get("/animal/search/treatment/:id_animal", treatmentController.treatmentSearch);

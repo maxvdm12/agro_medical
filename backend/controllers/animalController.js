@@ -20,6 +20,30 @@ exports.addAnimal = function(req, res) {
 
 
 };
+
+
+exports.animalType = function(req, res) {
+
+    console.log("ça buuuug");
+
+    connection.query("select * from type", req.body, function (error, result){
+        if(error)
+        {
+            console.log(error);
+        }
+        else{
+        //res.redirect("/")
+
+        
+        res.json({type: result});
+            
+        }
+
+    });
+
+
+};
+  
   
 
 
@@ -61,7 +85,7 @@ exports.allAnimalList = function(req, res) {
     
     
     
-        connection.query("Select * from animal as a INNER JOIN treatment AS t ON a.id = t.id_animal WHERE a.id = ?",id_animal , function (error, result){
+        connection.query("Select * from animal as a INNER JOIN type AS t ON a.type = t.name WHERE a.id = ?",id_animal , function (error, result){
             if(error)
             {   
      
@@ -133,7 +157,7 @@ exports.animalSearch = function (req, res){
     let id = req.params.id_animal;
    
 
-    connection.query("Select * FROM animal WHERE id = ? ",id ,function (error, result){
+    connection.query("Select * FROM animal INNER JOIN type ON animal.type = type.id WHERE animal.id = ?",id ,function (error, result){
         if(error)
         {
             console.log(error);

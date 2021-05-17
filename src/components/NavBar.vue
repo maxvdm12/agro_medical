@@ -6,7 +6,7 @@
 
     <h1> Animaux </h1>
 
-    <a v-on:click="switch_create()" class="nav_buttons"> <img src="../assets/img/add.svg" alt="Ajouter un animal"> </a> 
+    <a tabindex="2" v-on:click="switch_create()" class="nav_buttons"> <img src="../assets/img/add.svg" alt="Ajouter un animal"> </a> 
 
 
 
